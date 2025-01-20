@@ -1,0 +1,74 @@
+# Collect-and-store-the-student-details-
+coding:
+import java.util.Scanner;
+
+class Student {
+    int rollNumber;
+    String name;
+    int age;
+    String course;
+    void inputDetails() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Roll Number: ");
+        rollNumber = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.print("Enter Name: ");
+        name = scanner.nextLine();
+        System.out.print("Enter Age: ");
+        age = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.print("Enter Course: ");
+        course = scanner.nextLine();
+    }
+    void displayDetails() {
+        System.out.println("\nStudent Details:");
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Course: " + course);
+    }
+}
+public class StudentDetailsCollection {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of students: ");
+        int numStudents = scanner.nextInt();
+        Student[] students = new Student[numStudents];
+        for (int i = 0; i < numStudents; i++) {
+            System.out.println("\nEnter details for Student " + (i + 1) + ":");
+            students[i] = new Student(); 
+            students[i].inputDetails();
+       }   System.out.println("\nDisplaying all student details:");
+        for (int i = 0; i < numStudents; i++) {       students[i].displayDetails();
+        }
+    }
+}
+
+output:
+Enter the number of students: 2
+
+Enter details for Student 1:
+Enter Roll Number: 101
+Enter Name: John Doe
+Enter Age: 20
+Enter Course: Computer Science
+
+Enter details for Student 2:
+Enter Roll Number: 102
+Enter Name: Jane Smith
+Enter Age: 21
+Enter Course: Information Technology
+
+Displaying all student details:
+
+Student Details:
+Roll Number: 101
+Name: John Doe
+Age: 20
+Course: Computer Science
+
+Student Details:
+Roll Number: 102
+Name: Jane Smith
+Age: 21
+Course: Information Technology
